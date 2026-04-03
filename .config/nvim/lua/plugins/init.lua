@@ -99,17 +99,6 @@ return {
     },
   },
 
-  -- add this to the file where you setup your other plugins:
-  -- {
-  --   "monkoose/neocodeium",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     local neocodeium = require "neocodeium"
-  --     neocodeium.setup()
-  --     vim.keymap.set("i", "<A-f>", neocodeium.accept)
-  --   end,
-  -- },
-
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -157,6 +146,38 @@ return {
     dependencies = {
       "saghen/blink.cmp",
     },
+
+    config = function()
+      require("markview.extras.checkboxes").setup {
+        --- Default checkbox state(used when adding checkboxes).
+        ---@type string
+        default = "X",
+
+        --- Changes how checkboxes are removed.
+        ---@type
+        ---| "disable" Disables the checkbox.
+        ---| "checkbox" Removes the checkbox.
+        ---| "list_item" Removes the list item markers too.
+        remove_style = "disable",
+
+        --- Various checkbox states.
+        ---
+        --- States are in sets to quickly change between them
+        --- when there are a lot of states.
+        ---@type string[][]
+        states = {
+          { " ", "/", "X" },
+          { "<", ">" },
+          { "?", "!", "*" },
+          { '"' },
+          { "l", "b", "i" },
+          { "S", "I" },
+          { "p", "c" },
+          { "f", "k", "w" },
+          { "u", "d" },
+        },
+      }
+    end,
   },
   {
     "FabijanZulj/blame.nvim",

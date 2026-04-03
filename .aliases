@@ -1,0 +1,40 @@
+# --- Standard Navigation (eza) ---
+alias ls='eza'
+alias l='eza -a'
+alias ll='eza -lbF -all --icons'
+alias llm='eza -lbGd --sort=modified'
+alias la='eza -lbhHigUmuSa --time-style=long-iso --color-scale -all -all --icons'
+alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --color-scale'
+
+# --- Tooling ---
+alias py='python'
+alias g='git'
+alias lg='lazygit'
+alias dock='lazydocker'
+alias please='sudo'
+alias cat='bat'
+alias oci='/home/danko/tools/oci-cli/venv/bin/oci'
+command -v nvim &>/dev/null && alias nv='nvim'
+
+# --- System (Arch/Pacman) ---
+alias pac='sudo pacman -S'
+alias pacu='sudo pacman -Syu'
+alias pacr='sudo pacman -Rs'
+alias pacs='sudo pacman -Ss'
+alias paci='pacman -Si'
+alias paclo='pacman -Qdt'
+alias pacro='paclo && sudo pacman -Rns $(pacman -Qtdq)'
+alias pacc='sudo pacman -Scc'
+alias paclf='pacman -Ql'
+
+# --- Config & Scripts ---
+alias cyclewall='~/.config/waybar/scripts/cycleWall.sh'
+alias selectwall='~/.config/rofi/bin/selectBG'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# --- Shell Management ---
+alias aliases='nvim ~/.aliases && source ~/.zshrc'
+alias editzsh='nvim ~/.zshrc'
+alias editfish='nvim ~/.config/fish/config.fish'
+alias :q='exit'
+alias :wq='exit'
